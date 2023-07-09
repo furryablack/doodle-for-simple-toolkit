@@ -28,7 +28,7 @@
 - export function (or object): ```export class HelloWorld```
 - import in another project: ```import { HelloWorld } from 'pkg-name/HelloWorld'``` (or just from 'pkg-name')
 
-### How start
+### How to start
 
 - git clone
 - delete ./.git folder and reinit with your repository
