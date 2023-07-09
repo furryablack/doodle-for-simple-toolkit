@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "ES2015",
+      "ES2016",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES2020",
+      "dom"
+    ],
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "pretty": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es2016",
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "exclude": [
+    "**/*.cjs"
+  ]
+}

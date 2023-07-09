@@ -1,0 +1,66 @@
+{
+  "name": "doodle-for-simple-toolkit",
+  "description": "Doodle for a simple toolkit",
+  "keywords": [
+    "doodle",
+    "toolkit"
+  ],
+  "private": true,
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint ./",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "qa": "run-s lint test",
+    "cleanup": "rimraf dist && mkdir dist",
+    "build:indexes": "node pkg-cmd/build.js",
+    "build:types": "tsc --project ./tsconfig.build.json",
+    "build:commonjs": "yarn babel --verbose --out-dir dist pkg-src -x .ts --ignore '**/*.d.ts','**/*.test.ts'",
+    "build:mjs": "cross-env ESMODULES=true yarn build:commonjs --out-file-extension .mjs",
+    "build:bundles": "rollup -c",
+    "build": "run-s cleanup build:indexes build:types build:commonjs build:mjs build:bundles",
+    "example": "vite --config ./example/vite.config.js --host --port=4242 --force"
+  },
+  "author": "Furrya Black <furrya.black@gmail.com>",
+  "license": "MIT",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
+    "@eslint-kit/eslint-config-base": "^2.1.0",
+    "@eslint-kit/eslint-config-node": "^2.0.0",
+    "@eslint-kit/eslint-config-typescript": "^3.1.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/parser": "^4.2.0",
+    "camel-case": "^4.1.1",
+    "commitizen": "4.0.3",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "3.0.2",
+    "eslint": "^7.9.0",
+    "globby": "^11.0.0",
+    "husky": "3.1.0",
+    "jest": "^27.3.1",
+    "jest-watch-typeahead": "^1.0.0",
+    "lint-staged": "^9.5.0",
+    "npm-run-all": "^4.1.5",
+    "pascal-case": "^3.1.2",
+    "rimraf": "^5.0.1",
+    "rollup": "^2.32.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
