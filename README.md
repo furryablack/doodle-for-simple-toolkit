@@ -7,6 +7,7 @@
 ## Benefits 
 
 - It builds to MJS, CJS and UMD.
+- It builds type declarations (.d.ts) too.
 - It supports external packages like a react/vue/smth (change rollup.config.js).
 - It has a lightweight pre-builder which is easy to research and rework.
 - It has a minimal overhead - most of the work will done by rollup. 
