@@ -19,8 +19,7 @@
     "build:commonjs": "yarn babel --verbose --out-dir dist pkg-src -x .ts --ignore '**/*.d.ts','**/*.test.ts'",
     "build:mjs": "cross-env ESMODULES=true yarn build:commonjs --out-file-extension .mjs",
     "build:bundles": "rollup -c",
-    "build": "run-s cleanup build:indexes build:types build:commonjs build:mjs build:bundles",
-    "example": "vite --config ./example/vite.config.js --host --port=4242 --force"
+    "build": "run-s cleanup build:indexes build:types build:commonjs build:mjs build:bundles"
   },
   "author": "Furrya Black <furrya.black@gmail.com>",
   "license": "MIT",
